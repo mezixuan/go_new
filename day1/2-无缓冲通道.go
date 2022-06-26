@@ -7,7 +7,7 @@ import (
 
 func main() {
 	//创建管道，创建一个装数字的管道 ==》 channel
-	numChan := make(chan int) //使用管道时，一定要make，同map一样
+	numChan := make(chan int, 10) //使用管道时，一定要make，同map一样
 	//strChan := make(chan string) //装字符串的管道
 
 	go func() {
