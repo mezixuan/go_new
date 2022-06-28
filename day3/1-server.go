@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 	"net/rpc"
+	"net/rpc/jsonrpc"
 )
 
 type World struct {
@@ -39,6 +40,7 @@ func main() {
 	defer conn.Close()
 	fmt.Println("已经建立连接...")
 	//4. 绑定服务
-	rpc.ServeConn(conn)
+	//rpc.ServeConn(conn)
+	jsonrpc.ServeConn(conn)
 	fmt.Println("绑定成功...")
 }

@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"net/rpc"
+	"net/rpc/jsonrpc"
 )
 
 func main() {
-	conn, err := rpc.Dial("tcp", "127.0.0.1:8800")
+	//conn, err := rpc.Dial("tcp", "127.0.0.1:8800")
+	conn, err := jsonrpc.Dial("tcp", "127.0.0.1:8080")
 	if err != nil {
 		fmt.Println("rpc.Dial err", err)
 		return
